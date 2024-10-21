@@ -1,0 +1,258 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.full-width-white {
+    background-color: #fff;
+}
+
+p a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 2px;
+}
+
+p a:hover {
+    text-decoration-thickness: 3px;
+    transition-duration: 0.2s;
+}
+
+ul b {
+    color: #000;
+}
+
+header {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px;
+}
+
+.title {
+    font-size: 3.6rem;
+    color: #222;
+}
+
+.title > a:hover {
+    color: #333;
+    transition: opacity 0.2s;
+}
+
+.description {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.5em;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 4px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10.5px 28px;
+    line-height: 1.5em;
+    font-weight: 600;
+}
+
+.nav-menu > li {
+    padding: 14px 17.5px;
+    flex: 0 0 auto;
+}
+
+.nav-menu a:hover {
+    color: #333;
+    transition-duration: 0.2s;
+    opacity: 0.85;
+}
+
+.nav-link.active {
+    color: #333;
+    opacity: 0.85;
+}
+
+main {
+    background-image: url("../images/logo2.jpg");
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+
+article > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    min-height: 260px;
+    margin: 0 auto;
+    padding: 96px 48px 72px 48px;
+}
+
+article h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #222;
+    text-transform: uppercase;
+}
+
+article div > * {
+    flex: 0 0 auto;
+}
+
+article > div > div {
+    display: flex;
+    flex-direction: column;
+    width: 525px;
+}
+
+article p,
+article ul {
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.news-item {
+    margin: 0 0 48px 0;
+}
+
+.header-of-news {
+    margin: 0 0 24px 0;
+}
+
+.header-of-news time {
+    font-size: 1.1rem;
+    color: #767676;
+    font-weight: 800;
+    line-height: 1.5em;
+}
+
+.header-of-news time:hover {
+    color: #000;
+    text-decoration: underline;
+    transition-duration: 0.2s;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+}
+
+.header-of-news h3 {
+    font-size: 2.6rem;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+.header-of-news h3:hover {
+    color: #000;
+    text-decoration: underline;
+    transition-duration: 0.2s;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+    transition-duration: 0.2s;
+}
+
+article:first-child {
+    margin-bottom: 1200px;
+}
+
+article:not(:nth-child(-n + 2)) {
+    border-top: solid 1px #ddd;
+}
+
+footer {
+    margin: 42px 0 0 0;
+    border-top: solid 1px #eee;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px 42px 49px 42px;
+}
+
+footer h4 {
+    font-size: 1.1rem;
+    color: #222;
+    margin: 0 0 22px 0;
+}
+
+footer strong {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.6em;
+    color: #333;
+}
+
+footer p {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    color: #333;
+    margin: 0 0 21px 0;
+}
+
+.find-us {
+    width: 330px;
+}
+
+.call-and-search {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    width: 532px;
+}
+
+footer input {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    color: #666;
+    background-color: #fff;
+    border: solid 1px #bbb;
+    border-radius: 3px;
+    padding: 0.7em;
+}
+
+footer form {
+    position: relative;
+}
+
+footer form button {
+    position: absolute;
+    background-color: #222;
+    border-radius: 2px;
+    top: 3px;
+    bottom: 3px;
+    right: 3px;
+    padding: 8px 16px;
+}
+
+footer form button:hover {
+    transition: 0.2s;
+    opacity: 0.6;
+}
+
+footer form button img {
+    width: 24px;
+    height: 24px;
+}
