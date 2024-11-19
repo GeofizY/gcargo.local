@@ -32,7 +32,7 @@ dd {
 }
 
 nav ul,
-ol {
+nav ol {
     /* padding: 0; */
     list-style: none;
 }

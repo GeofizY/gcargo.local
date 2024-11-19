@@ -170,6 +170,33 @@ article ul {
     transition-duration: 0.2s;
 }
 
+.social-media-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    list-style: none;
+}
+
+.social-media-links > li > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-media-links > li > a:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.social-media-links > li > a:hover > div {
+    text-decoration: underline;
+}
+
+.social-media-links img {
+    width: 50px;
+}
+
 article:first-child {
     margin-bottom: 1200px;
 }

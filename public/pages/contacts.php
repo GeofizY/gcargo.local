@@ -38,6 +38,7 @@
                 <h2>КОНТАКТЫ</h2>
                 <div>
                     <p>Наши контакты</p>
+                    <?php require_once '../includes/contacts-links.php'; ?>
                 </div>
             </div>
         </article>

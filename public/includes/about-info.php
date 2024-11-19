@@ -2,7 +2,7 @@
 
 require_once('db.php');
 
-$query = "SELECT content FROM about";
+$query = "SELECT content FROM about LIMIT 1";
 
 $result = $connection->query($query);
 
