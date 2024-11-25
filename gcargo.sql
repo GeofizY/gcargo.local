@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Окт 21 2024 г., 16:34
+-- Время создания: Ноя 25 2024 г., 06:53
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.3.6
 
@@ -56,7 +56,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `address`, `phone`) VALUES
-(1, 'РОССИЯ, 196626, г Санкт-Петербург, п Шушары, ш Московское,<br>дом 82, лит.А, оф.№301', '+7 (921) 775 14 07');
+(1, 'РОССИЯ, 196626, г Санкт-Петербург, п Шушары, ш Московское,<br/>дом 82, лит.А, оф.№301', '+7 (921) 775 14 07');
 
 -- --------------------------------------------------------
 
@@ -84,6 +84,26 @@ INSERT INTO `news` (`id`, `title`, `author`, `date`, `description`, `content`, `
 (2, 'Эксперт: управление тарифом для загрузки простаивающей инфраструктуры – перспективное решение', 'Дженерал Карго', '2019-04-05 23:56:22', 'Идея РЖД о предоставлении скидок грузоотправителям на малозагруженных направлениях – здравая, считает директор группы корпоративных рейтингов АКРА Максим Худалов. И ее реализация может стать первым шагом на пути к расширению диспетчеризации в рамках монополии. – Возможность гибко управлять тарифом, чтобы загрузить простаивающую инфраструктуру – это перспективное решение. К сожалению, основной проблемы российской железной дороги – …', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis massa ac nisl consectetur facilisis. Praesent rutrum ac mauris sit amet hendrerit. Integer quis ultrices lorem. Proin commodo ullamcorper neque ac consequat. Aliquam tempor iaculis augue ac maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl metus. Pellentesque euismod, libero non sagittis aliquet, erat nibh tincidunt dui, quis lacinia nisi mauris non urna. Sed vestibulum scelerisque lectus a tincidunt. Morbi sit amet neque at massa ullamcorper egestas. Etiam a enim nunc. Duis at egestas eros. Sed orci massa, viverra at maximus eget, maximus ut diam. Morbi ultrices, diam vel pellentesque consectetur, libero libero hendrerit odio, sed iaculis lorem ex non arcu.</p>', 'http://logirus.ru/news/transport/ekspert-_upravlenie_tarifom_dlya_zagruzki_prostaivayushchey_infrastruktury_-_perspektivnoe_reshenie.html', '../images/TH.jpg'),
 (3, 'Транспортная накладная (ТН или ТрН) 2021', 'Дженерал Карго', '2021-02-21 00:00:00', 'Транспортная накладная заполняется только при заказе перевозки у компании, оказывающей услуги по грузоперевозкам. Согласно п. 6 Постановления Правительства РФ от 15 апреля 2011 г. № 272 «Об утверждении Правил перевозок грузов автомобильным транспортом» заключение договора перевозки груза подтверждается транспортной накладной, составленной грузоотправителем.В соответствии с Постановлением Правительства РФ от 21.12.20 № 2200 внесены изменения в форму …', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis massa ac nisl consectetur facilisis. Praesent rutrum ac mauris sit amet hendrerit. Integer quis ultrices lorem. Proin commodo ullamcorper neque ac consequat. Aliquam tempor iaculis augue ac maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl metus. Pellentesque euismod, libero non sagittis aliquet, erat nibh tincidunt dui, quis lacinia nisi mauris non urna. Sed vestibulum scelerisque lectus a tincidunt. Morbi sit amet neque at massa ullamcorper egestas. Etiam a enim nunc. Duis at egestas eros. Sed orci massa, viverra at maximus eget, maximus ut diam. Morbi ultrices, diam vel pellentesque consectetur, libero libero hendrerit odio, sed iaculis lorem ex non arcu.</p>', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+  `id` int UNSIGNED NOT NULL,
+  `login` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(319) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `email`) VALUES
+(1, 'admin', '$2y$10$ApJsJJf1b3EogHKqui1/OeXaVnLWMf5srM0oZOPthM2ZNouXjUm2q', 'admin@gcargo.pro');
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -107,6 +127,14 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -127,6 +155,12 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `news`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,5 +5,6 @@
         <li><a href="../pages/about.php" class="nav-link">О нас</a></li>
         <li><a href="../pages/contacts.php" class="nav-link">Контакты</a></li>
         <li><a href="https://online.gcargo.pro/" class="nav-link">Вход для клиентов</a></li>
+        <li><a href="../pages/signin.php" class="nav-link">Вход для сотрудников</a></li>
     </ul>
 </nav>
