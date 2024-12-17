@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Ноя 25 2024 г., 06:53
+-- Время создания: Дек 17 2024 г., 17:28
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.3.6
 
@@ -94,15 +94,18 @@ CREATE TABLE `user` (
   `id` int UNSIGNED NOT NULL,
   `login` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(319) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `decryppassword` varchar(50) NOT NULL,
+  `email` varchar(319) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`id`, `login`, `password`, `email`) VALUES
-(1, 'admin', '$2y$10$ApJsJJf1b3EogHKqui1/OeXaVnLWMf5srM0oZOPthM2ZNouXjUm2q', 'admin@gcargo.pro');
+INSERT INTO `user` (`id`, `login`, `password`, `decryppassword`, `email`, `phone`, `role`) VALUES
+(1, 'admin', '$2y$10$ApJsJJf1b3EogHKqui1/OeXaVnLWMf5srM0oZOPthM2ZNouXjUm2q', 'admin', 'admin@gcargo.pro', '89999999999', 'admin');
 
 --
 -- Индексы сохранённых таблиц
