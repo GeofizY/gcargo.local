@@ -170,22 +170,46 @@ article ul {
     transition-duration: 0.2s;
 }
 
-.social-media-links {
+.contacts {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.contacts h3 {
+    margin-bottom: 8px;
+}
+
+.phone > a {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.5em;
+}
+
+.phone > a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.social-media-links {
+    display: flex;
+    gap: 10px;
     width: fit-content;
     list-style: none;
 }
 
 .social-media-links > li > a {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 10px;
 }
 
 .social-media-links > li > a:hover {
-    opacity: 0.8;
+    background-color: #252525;
     transition: 0.3s;
 }
 
