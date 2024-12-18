@@ -99,13 +99,13 @@ if ($news_id > 0) {
                                 <?php if ($prev_news): ?>
                                     <a href="itemNews.php?id=<?php echo $prev_news['id'] ?>" class="prev-news">
                                         <span>НАЗАД</span>
-                                        <p>X5 Retail Group вместе с PickPoint установит в супермаркетах 1,5 тысячи постаматов</p>
+                                        <p><?php echo $prev_news['title'] ?></p>
                                     </a>
                                 <?php endif; ?>
                                 <?php if ($next_news): ?>
                                     <a href="itemNews.php?id=<?php echo $next_news['id'] ?>" class="next-news">
                                         <span>ДАЛЕЕ</span>
-                                        <p>Транспортная накладная (ТН или ТрН) 2021</p>
+                                        <p><?php echo $next_news['title'] ?></p>
                                     </a>
                                 <?php endif; ?>
                             </div>
