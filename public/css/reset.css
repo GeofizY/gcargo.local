@@ -14,6 +14,10 @@ body {
     font-size: 1.4rem;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body,
 h1,
 h2,

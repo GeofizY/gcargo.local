@@ -37,7 +37,7 @@ checkGuest();
         <main>
             <p class="notice">Для входа в систему введите имя пользователя и пароль:</p>
             <?php if (checkErrorExist('error')): ?>
-                <p class="error"><?php showErrorMessage(); ?></p>
+                <p class="error"><?php showErrorMessage('error'); ?></p>
             <?php endif; ?>
 
             <form action="../includes/authentication/auth.php" method="post">

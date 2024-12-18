@@ -13,6 +13,8 @@ $userId = $_SESSION['user']['id'] ?? null;
 $query = "SELECT * FROM user WHERE id = '$userId'";
 $result = $connection->query($query);
 $user = $result->fetch_assoc();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +40,7 @@ $user = $result->fetch_assoc();
     require_once('../includes/modules/nav.php');
     ?>
     <main>
+
         <article>
             <div>
                 <p class="hello">Здравствуйте, <?php echo $user['login']; ?></p>
@@ -46,10 +49,10 @@ $user = $result->fetch_assoc();
                 </form>
             </div>
         </article>
-        <article class="work-with-db">
-            <div>
-                <h2>Работа с базой данных</h2>
-                <div class="change-db">
+        <article class="company-info">
+            <section>
+                <h2>Редактирование информации о компании</h2>
+                <div class="form-items edit-company-info">
                     <form action="../includes/actions/changePhone.php" method="post" class="change-phone">
                         <label for="phone">Изменить контактный номер компании:</label>
                         <div class="input-and-button">
@@ -72,11 +75,104 @@ $user = $result->fetch_assoc();
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
+            <section>
+                <h2>Добавление новости</h2>
+                <form action="../includes/actions/createNews.php" method="post" enctype="multipart/form-data" class="form-items add-news">
+                    <div class="fields">
+                        <div class="adminPanel-news-title">
+                            <label for="title" class="row">Заголовок:</label>
+                            <input
+                                type="text"
+                                id="title"
+                                name="title"
+                                value="<?php echo getCorrectData('title'); ?>"
+                                maxlength="255"
+                                <?php showErrorAttr('title'); ?>
+                                required>
+                            <?php if (checkErrorExist('title')): ?>
+                                <p class="error"><?php showErrorMessage('title'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="adminPanel-news-author">
+                            <label for="author" class="row">Автор:</label>
+                            <input
+                                type="text"
+                                id="author"
+                                name="author"
+                                value="<?php echo getCorrectData('author'); ?>"
+                                maxlength="50"
+                                <?php showErrorAttr('author'); ?>
+                                required>
+                            <?php if (checkErrorExist('author')): ?>
+                                <p class="error"><?php showErrorMessage('author'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="adminPanel-news-description">
+                            <label for="description" class="row">Краткое описание:</label>
+                            <textarea
+                                type="text"
+                                id="description"
+                                name="description"
+                                maxlength="500"
+                                <?php showErrorAttr('description'); ?>
+                                required><?php echo getCorrectData('description'); ?></textarea>
+                            <?php if (checkErrorExist('description')): ?>
+                                <p class="error"><?php showErrorMessage('description'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="adminPanel-news-content">
+                            <label for="content" class="row">Статья:</label>
+                            <textarea
+                                type="text"
+                                id="content"
+                                name="content"
+                                maxlength="5000"
+                                <?php showErrorAttr('content'); ?>
+                                required><?php echo getCorrectData('content'); ?></textarea>
+                            <?php if (checkErrorExist('content')): ?>
+                                <p class="error"><?php showErrorMessage('content'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="adminPanel-news-source">
+                            <label for="source" class="row">Источник:</label>
+                            <input
+                                type="text"
+                                id="source"
+                                name="source"
+                                value="<?php echo getCorrectData('source'); ?>"
+                                maxlength="500"
+                                <?php showErrorAttr('source'); ?>
+                                required>
+                            <?php if (checkErrorExist('source')): ?>
+                                <p class="error"><?php showErrorMessage('source'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="adminPanel-news-image">
+                            <label for="image" class="row">Обложка (не обязательно):</label>
+                            <input
+                                type="file"
+                                id="image"
+                                name="image"
+                                <?php showErrorAttr('image'); ?>>
+                            <?php if (checkErrorExist('image')): ?>
+                                <p class="error"><?php showErrorMessage('image'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <button type="submit">Создать</button>
+                </form>
+                <?php clearErrors() ?>
+            </section>
         </article>
+        <?php if (checkStatusOfNews()): ?>
+            <output class="<?php showStatusOfNews('attr'); ?>"><?php showStatusOfNews('status'); ?></output>
+        <?php endif; ?>
     </main>
 
     <script src="../js/animationNav.js"></script>
+    <script src="../js/notification.js"></script>
+    <script src="../js/clearInputErrors.js"></script>
 </body>
 
 </html>

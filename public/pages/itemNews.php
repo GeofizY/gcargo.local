@@ -73,10 +73,10 @@ if ($news_id > 0) {
                                 <?php echo $news['content'] ?>
                                 <?php
 
-                                if ($news['sourse'] != null) {
+                                if ($news['source'] != null) {
                                 ?>
                                     <p>
-                                        <a href="<?php echo $news['sourse'] ?>" class="sourse">источник</a>
+                                        <a href="<?php echo $news['source'] ?>" class="source">источник</a>
                                     </p>
                                 <?php
                                 }

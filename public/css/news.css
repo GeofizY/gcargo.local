@@ -87,6 +87,10 @@ nav {
     border-bottom: solid 1px #ddd;
 }
 
+.logo > img {
+    max-width: 500px;
+}
+
 .wrapper {
     display: flex;
     justify-content: space-between;

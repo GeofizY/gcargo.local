@@ -12,10 +12,27 @@ function showErrorAttr(string $name)
     echo isset($_SESSION['validation'][$name]) ? 'aria-invalid="true"' : 'aria-invalid="false"';
 }
 
-function showErrorMessage()
+function showErrorMessage(string $name)
 {
-    $message = $_SESSION['validation']['error'] ?? '';
-    unset($_SESSION['validation']['error']);
+    $message = $_SESSION['validation'][$name] ?? '';
+    unset($_SESSION['validation'][$name]);
+    echo $message;
+}
+
+function checkStatusOfNews(): bool
+{
+    return isset($_SESSION['notification']['status']);
+}
+
+function setNotification(string $name, string $text)
+{
+    $_SESSION['notification'][$name] = $text;
+}
+
+function showStatusOfNews($name)
+{
+    $message = $_SESSION['notification'][$name] ?? '';
+    unset($_SESSION['notification'][$name]);
     echo $message;
 }
 
@@ -53,6 +70,13 @@ function setErrorText(string $name, string $text)
 {
     $_SESSION['validation'][$name] = $text;
     $_SESSION['validation']['error'] = $text;
+}
+
+function checkLength(string $name, string $value, int $length)
+{
+    if (iconv_strlen($value) > $length) {
+        setErrorText($name, "Поле не может превышать $length символов");
+    }
 }
 
 function checkLogin()
