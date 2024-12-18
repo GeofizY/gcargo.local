@@ -6,6 +6,7 @@ require_once('../includes/authentication/functions.php');
 
 checkLogin();
 
+
 if (!isset($_SESSION['user'])) return false;
 
 $userId = $_SESSION['user']['id'] ?? null;
@@ -165,8 +166,8 @@ $user = $result->fetch_assoc();
                 <?php clearErrors() ?>
             </section>
         </article>
-        <?php if (checkStatusOfNews()): ?>
-            <output class="<?php showStatusOfNews('attr'); ?>"><?php showStatusOfNews('status'); ?></output>
+        <?php if (checkStatus()): ?>
+            <output class="<?php showStatus('attr'); ?>"><?php showStatus('status'); ?></output>
         <?php endif; ?>
     </main>
 

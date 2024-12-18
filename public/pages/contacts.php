@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -46,6 +51,9 @@
     require_once '../includes/modules/footer.php';
     ?>
     <script src="../js/animationNav.js"></script>
+    <script src="../js/popupFeedback.js"></script>
+    <script src="../js/notification.js"></script>
+
 
 </body>
 

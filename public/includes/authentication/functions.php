@@ -19,7 +19,7 @@ function showErrorMessage(string $name)
     echo $message;
 }
 
-function checkStatusOfNews(): bool
+function checkStatus(): bool
 {
     return isset($_SESSION['notification']['status']);
 }
@@ -29,7 +29,7 @@ function setNotification(string $name, string $text)
     $_SESSION['notification'][$name] = $text;
 }
 
-function showStatusOfNews($name)
+function showStatus($name)
 {
     $message = $_SESSION['notification'][$name] ?? '';
     unset($_SESSION['notification'][$name]);

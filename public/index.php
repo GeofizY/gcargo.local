@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -58,6 +63,9 @@
     ?>
 
     <script src="./js/animationNav.js"></script>
+    <script src="../js/popupFeedback.js"></script>
+    <script src="../js/notification.js"></script>
+
 </body>
 
 </html>
